@@ -33,7 +33,9 @@ router.post('/users', function (req, res, next) {
       user.save()
       res.redirect('/users')
     }
+    else (res.status(500))
   }
+  else (res.status(500))
 })
 
 router.get('/users', function (req, res, next) {
@@ -41,7 +43,6 @@ router.get('/users', function (req, res, next) {
   User.find({}, function (err, user) {
     res.render("index", { user })
   });
-
 
 });
 
